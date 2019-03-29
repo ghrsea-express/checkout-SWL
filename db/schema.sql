@@ -3,11 +3,11 @@
   - Create db if db does not exists
   - Use the db
 */
-DROP DATABASE IF EXISTS product_items;
-CREATE DATABASE IF NOT EXISTS product_items;
-USE product_items;
+DROP DATABASE IF EXISTS google_express_FEC;
+CREATE DATABASE IF NOT EXISTS google_express_FEC;
+USE google_express_FEC;
 
-CREATE TABLE items (
+CREATE TABLE product_items (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
   price DECIMAL NOT NULL,
