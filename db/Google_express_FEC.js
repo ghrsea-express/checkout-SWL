@@ -14,7 +14,6 @@ module.exports.getProductItemById = function (item_id, callback) {
   })
 }
 
-
 module.exports.postProductSeed = function (newProductSeed , callback) {
   const queryString = 'INSERT INTO product_items (id, name, price, store, free_return_days) ' + 
                       'VALUES (?, ?, ?, ?, ?)'

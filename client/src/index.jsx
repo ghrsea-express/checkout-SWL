@@ -1,8 +1,8 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './components/App.jsx'
+
+import Checkout from './components/Checkout.jsx'
 
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<Checkout />, document.getElementById('Checkout'));

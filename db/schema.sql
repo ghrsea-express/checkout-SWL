@@ -10,7 +10,7 @@ USE google_express_FEC;
 CREATE TABLE product_items (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
-  price DECIMAL NOT NULL,
+  price DECIMAL(13,2) NOT NULL,
   store VARCHAR(100) NOT NULL,
   free_return_days INT NOT NULL
 ) 
