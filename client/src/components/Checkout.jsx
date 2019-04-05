@@ -2,19 +2,26 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import CartButton from './CartButton.jsx';
+import StoresWithItem from './StoresWithItem.jsx';
+import { PlaceOutlined } from '@material-ui/icons';
+import { LocalShippingOutlined } from '@material-ui/icons';
+
+
 
 class Checkout extends Component {
   constructor(props) {
       super(props);
       this.state = {
-        item_id: 100,
+        item_id: 1,
         cart: [],
         item: {},
         itemCount: 0,
+        otherStores: []
       };
 
       this.increaseItemCount = this.increaseItemCount.bind(this);
       this.decreaseItemCount = this.decreaseItemCount.bind(this);
+      
   };
 
   componentDidMount() {
@@ -22,7 +29,6 @@ class Checkout extends Component {
   }
 
   increaseItemCount() {
-    console.log('testAdd')
     let newCount = this.state.itemCount + 1;
     this.setState({
       itemCount: newCount
@@ -38,9 +44,8 @@ class Checkout extends Component {
     }
   }
 
-  // queries db for item by id and renders data
   getItemById() {
-    return axios.get('/product?id=' + `${this.state.item_id}`)
+    axios.get('/product?id=' + `${this.state.item_id}`)
       .then(response => {
         this.setState({ item: response.data[0] })
       })
@@ -53,12 +58,24 @@ class Checkout extends Component {
       return (
       
         <div>
-          <p>{this.state.item.price}</p>
-          <p>Free delivery by Mon, Apr 8</p>
-          <p>Ship to [User Zip Code]</p>
-          <p>Sold by {this.state.item.store}</p>
-          <p>Free returns for {this.state.item.free_return_days} days</p>
+          <div className='itemPrice'>
+            {'$' + parseFloat(this.state.item.price).toFixed(2)}
+          </div>
+          <div className='checkout_delivery'>
+            <LocalShippingOutlined />
+            <span>Free delivery by Mon, Apr 8</span>
+          </div>
+          <div className='checkout_shipping'>
+            <PlaceOutlined />
+            <span>Ship to <a href=''>98105</a></span>
+          </div>
+          <div className='soldByAndReturnDay'>
+            <p>Sold by {this.state.item.store}</p>
+            <a href=''>Free returns for {this.state.item.free_return_days} days</a>            
+          </div>
           <CartButton data={this.state} addItem={this.increaseItemCount} subItem={this.decreaseItemCount}/>
+          <StoresWithItem data={this.state.item}/>
+          <div className='guidanceText'>Google Express works with retailers to protect your order. <a href="">Learn more</a></div>
         </div>
       )
   };

@@ -13,12 +13,3 @@ module.exports.getProductItemById = function (item_id, callback) {
     callback(null, rows)
   })
 }
-
-module.exports.postProductSeed = function (newProductSeed , callback) {
-  const queryString = 'INSERT INTO product_items (id, name, price, store, free_return_days) ' + 
-                      'VALUES (?, ?, ?, ?, ?)'
-  db.query(queryString, [newProductSeed.id, newProductSeed.name, newProductSeed.price, newProductSeed.store, newProductSeed.free_return_days], (err, rows) => {
-    if(err) return callback(err)
-    callback(null, rows)
-  })
-}

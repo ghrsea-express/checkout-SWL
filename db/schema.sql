@@ -12,5 +12,7 @@ CREATE TABLE product_items (
   name VARCHAR(100) NOT NULL,
   price DECIMAL(13,2) NOT NULL,
   store VARCHAR(100) NOT NULL,
-  free_return_days INT NOT NULL
+  free_return_days INT NOT NULL,
+  sameItem_Id VARCHAR(255) NOT NULL
+
 ) 

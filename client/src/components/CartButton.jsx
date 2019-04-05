@@ -3,11 +3,15 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { AddShoppingCart } from '@material-ui/icons';
+import  { AddCircleOutline }  from '@material-ui/icons';
+import { RemoveCircleOutline } from '@material-ui/icons';
 
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
     width: '300px',
+    margin: '10px 0px 10px 10px',
+    padding: '10px 0px 10px 0px'
   },
   input: {
     display: 'none',
@@ -24,7 +28,7 @@ class CartButton extends Component {
       return (
         <div>
           <Button variant="contained" color="primary" className={classes.button} onClick={this.props.addItem}>
-            <AddShoppingCart /> 
+            <AddShoppingCart className='cartBasketIcon' /> 
             <span>Add to cart</span>
           </Button>
         </div>
@@ -33,9 +37,9 @@ class CartButton extends Component {
       return (
         <div>
           <Button variant="outlined" color="primary" className={classes.button}>
-            <span className='cartAddIcon' onClick={this.props.addItem}>Add </span>
+            <RemoveCircleOutline className='cartAddIcon' onClick={this.props.subItem} />
             <span>{`${this.props.data.itemCount} in cart`}</span>
-            <span className='cartSubIcon' onClick={this.props.subItem}>Subtract</span>
+            <AddCircleOutline className='cartSubIcon' onClick={this.props.addItem} />
           </Button>
         </div>
       );    
