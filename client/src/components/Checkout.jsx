@@ -75,7 +75,10 @@ class Checkout extends Component {
           </div>
           <CartButton data={this.state} addItem={this.increaseItemCount} subItem={this.decreaseItemCount}/>
           <StoresWithItem data={this.state.item}/>
-          <div className='guidanceText'>Google Express works with retailers to protect your order. <a href="">Learn more</a></div>
+          <div className='guidanceText'>
+            <span>Google Express works with retailers to protect your order.</span>
+            <a href="">Learn more</a>
+          </div>
         </div>
       )
   };
