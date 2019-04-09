@@ -19,16 +19,6 @@ class StoresWithItem extends Component {
     super(props);
   }
 
-  componentDidMount() {
-    this.getItemsStore()
-  }
-
-  
-
-  getItemsStore() {
-   
-  }
-
   render() {
     const { classes } = this.props;
 
