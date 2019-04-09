@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import StoresWithItem from './StoresWithItem.jsx';
+import StoresWithItem from '../src/components/StoresWithItem.jsx';
 
 describe('StoresWithItem', () => {
 

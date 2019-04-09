@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Checkout from './Checkout.jsx';
+import Checkout from '../src/components/Checkout.jsx';
 
 
 describe('Checkout', () => {
@@ -27,5 +27,3 @@ describe('Checkout', () => {
   });
 
 })
-
-//debug

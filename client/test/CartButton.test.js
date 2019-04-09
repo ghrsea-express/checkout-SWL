@@ -1,7 +1,7 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
-import CartButton from './CartButton.jsx';
+import CartButton from '../src/components/CartButton.jsx';
 
 describe('CartButton', () => {
 
@@ -19,7 +19,7 @@ describe('CartButton', () => {
     expect(wrapper.children()).toHaveLength(1);
   });
 
-  it('Should render 1 children when itemCount is 1', () => {
+  it('Should check if props have correct properties', () => {
     const data = {
       item_id: 1,
       cart: [],
@@ -28,7 +28,7 @@ describe('CartButton', () => {
       otherStores: []
     };
     
-    const wrapper = mount(<CartButton data={data}/>);
+    const wrapper = shallow(<CartButton data={data}/>);
     expect(wrapper.props().data).toHaveProperty('item_id');
     expect(wrapper.props().data).toHaveProperty('cart');
     expect(wrapper.props().data).toHaveProperty('item');

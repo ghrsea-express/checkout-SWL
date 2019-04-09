@@ -59,3 +59,10 @@ typings/
 
 # next.js build output
 .next
+
+# jest coverage output
+coverage/
+
+# other
+.DS_Store
+
