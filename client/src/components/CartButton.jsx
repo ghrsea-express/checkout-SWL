@@ -27,7 +27,7 @@ class CartButton extends Component {
     if(this.props.data.itemCount === 0) {
       return (
         <div>
-          <Button variant="contained" color="primary" className={classes.button} onClick={this.props.addItem}>
+          <Button id="btn-add-0" variant="contained" color="primary" className={classes.button} onClick={this.props.addItem}>
             <AddShoppingCart className='cartBasketIcon' /> 
             <span>Add to cart</span>
           </Button>
@@ -37,7 +37,7 @@ class CartButton extends Component {
       return (
         <div>
           <Button variant="outlined" color="primary" className={classes.button}>
-            <RemoveCircleOutline className='cartAddIcon' onClick={this.props.subItem} />
+            <RemoveCircleOutline id="btn-add-1" className='cartAddIcon' onClick={this.props.subItem} />
             <span>{`${this.props.data.itemCount} in cart`}</span>
             <AddCircleOutline className='cartSubIcon' onClick={this.props.addItem} />
           </Button>

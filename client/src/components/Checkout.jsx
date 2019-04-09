@@ -80,6 +80,7 @@ class Checkout extends Component {
             <a href="">Learn more</a>
           </div>
         </div>
+        
       )
   };
 };
