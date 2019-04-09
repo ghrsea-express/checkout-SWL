@@ -10,13 +10,11 @@ import Checkout from './Checkout.jsx';
 
 describe('Checkout', () => {
   it('Should render', () => {
-    // const { wrapper } = setup();
     const wrapper = shallow(<Checkout />);
     expect(wrapper.children()).toHaveLength(7);
   });
 
   it('Should call on increaseItemCount & set itemCount from 0 to 1', () => {
-    // const { wrapper } = setup();
     const wrapper = shallow(<Checkout />);
     wrapper.instance().increaseItemCount();
     wrapper.update();
@@ -24,7 +22,6 @@ describe('Checkout', () => {
   });
 
   it('Should call on decreaseItemCount & set itemCount from 1 to 0', () => {
-    // const { wrapper } = setup();
     const wrapper = shallow(<Checkout />);
     wrapper.setState({itemCount: 1})
     wrapper.instance().decreaseItemCount();
