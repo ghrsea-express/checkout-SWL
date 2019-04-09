@@ -3,12 +3,9 @@ import { shallow } from 'enzyme';
 
 import Checkout from './Checkout.jsx';
 
-// function setup() {
-//   const wrapper = shallow(<Checkout />);
-//   return { wrapper };
-// }
 
 describe('Checkout', () => {
+  
   it('Should render', () => {
     const wrapper = shallow(<Checkout />);
     expect(wrapper.children()).toHaveLength(7);
@@ -28,6 +25,7 @@ describe('Checkout', () => {
     wrapper.update();
     expect(wrapper.state().itemCount).toBe(0);
   });
+
 })
 
 //debug
