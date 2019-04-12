@@ -21,7 +21,7 @@ describe('CartButton', () => {
 
   it('Should check if props have correct properties', () => {
     const data = {
-      item_id: 1,
+      id: 1,
       cart: [],
       item: {},
       itemCount: 0,
@@ -29,7 +29,7 @@ describe('CartButton', () => {
     };
     
     const wrapper = shallow(<CartButton data={data}/>);
-    expect(wrapper.props().data).toHaveProperty('item_id');
+    expect(wrapper.props().data).toHaveProperty('id');
     expect(wrapper.props().data).toHaveProperty('cart');
     expect(wrapper.props().data).toHaveProperty('item');
     expect(wrapper.props().data).toHaveProperty('itemCount');

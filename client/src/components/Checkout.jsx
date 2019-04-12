@@ -12,7 +12,7 @@ class Checkout extends Component {
   constructor(props) {
       super(props);
       this.state = {
-        item_id: 1,
+        id: (window.location.pathname).match(/\d+/),
         cart: [],
         item: {},
         itemCount: 0,
@@ -45,7 +45,7 @@ class Checkout extends Component {
   }
 
   getItemById() {
-    axios.get('/product?id=' + `${this.state.item_id}`)
+    axios.get('/product/' + `${this.state.id}`)
       .then(response => {
         this.setState({ item: response.data[0] })
       })
