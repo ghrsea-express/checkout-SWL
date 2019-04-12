@@ -5,7 +5,7 @@ const db = require('../db/Google_express_FEC')
 const app = express();
 
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/../client/dist'));
+app.use('/:id',express.static(__dirname + '/../client/dist'));
 
 app.get('/product_items', (req, res) => {
   db.getProductItems((err, rows) => {
@@ -14,8 +14,8 @@ app.get('/product_items', (req, res) => {
   })
 })
 
-app.get('/product', (req, res) => {
-  let datapoint = req.query.id;
+app.get('/product/:id', (req, res) => {
+  let datapoint = req.params.id;
   db.getProductItemById(datapoint, (err, data) => {
     if(err) return res.status(500).send(err)
     res.send(data)
