@@ -1,11 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 const db = require('../db/Google_express_FEC')
 
 const app = express();
 
 app.use(bodyParser.json());
-app.use('/:id',express.static(__dirname + '/../client/dist'));
+app.use(express.static(__dirname + '/../client/dist'));
 
 app.get('/product_items', (req, res) => {
   db.getProductItems((err, rows) => {
@@ -22,5 +23,9 @@ app.get('/product/:id', (req, res) => {
   })
 })
 
-let port = process.env.PORT || 3002;
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../client/dist/index.html'))
+})
+
+let port = process.env. PORT || 3002;
 app.listen(port, ()=> console.log(`Listening on port: ${port}`));
