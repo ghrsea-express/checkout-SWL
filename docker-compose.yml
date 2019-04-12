@@ -2,7 +2,8 @@ version: "3"
 
 services:
   results:
-    build: .
+    # build: .
+    images: senwlu/checkout_fec:checkout-swl_results
     depends_on:
       - 'database'
     ports:
