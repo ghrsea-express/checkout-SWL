@@ -45,9 +45,6 @@ class Checkout extends Component {
   }
 
   getItemById() {
-    if(this.state.id === " " || this.state.id === null) {
-      console
-    }
     axios.get('/product/' + `${this.state.id}`)
       .then(response => {
         this.setState({ item: response.data[0] })

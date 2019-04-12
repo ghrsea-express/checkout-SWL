@@ -15,4 +15,4 @@ CREATE TABLE product_items (
   free_return_days INT NOT NULL,
   sameItem_Id VARCHAR(255) NOT NULL
 
-) 
+);
