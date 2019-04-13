@@ -8,6 +8,7 @@
     "start-nodemon": "nodemon server/index.js",
     "react-dev": "webpack -d --watch",
     "seed-db": "node db/seeds/seeder.js",
+    "app-prod": "webpack --mode=production",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors"
