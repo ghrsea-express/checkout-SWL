@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import withStyles from '@material-ui/core/styles/withStyles';
 import Button from '@material-ui/core/Button';
-import { AddShoppingCart } from '@material-ui/icons';
-import  { AddCircleOutline }  from '@material-ui/icons';
-import { RemoveCircleOutline } from '@material-ui/icons';
+import AddShoppingCart from '@material-ui/icons/AddShoppingCart';
+import AddCircleOutline  from '@material-ui/icons/AddCircleOutline';
+import RemoveCircleOutline from '@material-ui/icons/RemoveCircleOutline';
 
 const styles = theme => ({
   button: {

@@ -3,8 +3,8 @@ import axios from 'axios';
 
 import CartButton from './CartButton.jsx';
 import StoresWithItem from './StoresWithItem.jsx';
-import { PlaceOutlined } from '@material-ui/icons';
-import { LocalShippingOutlined } from '@material-ui/icons';
+import PlaceOutlined from '@material-ui/icons/PlaceOutlined';
+import LocalShippingOutlined from '@material-ui/icons/LocalShippingOutlined';
 
 
 

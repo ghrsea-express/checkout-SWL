@@ -1,6 +1,7 @@
 var path = require('path');
 var SRC_DIR = path.join(__dirname, '/client/src');
 var DIST_DIR = path.join(__dirname, '/client/dist');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   entry: `${SRC_DIR}/index.jsx`,
@@ -12,7 +13,7 @@ module.exports = {
     loaders: [
       {
         test: /\.css?/,
-        loader: ['style-loader', 'css-loader']
+        loaders: ['style-loader', 'css-loader']
       },
       {
         test: /\.jsx?/,
@@ -21,7 +22,10 @@ module.exports = {
         query: {
           presets: ['react', 'es2015']
         }
-      }
+      },
     ]
-  }
+  },
+  optimization: {
+    minimizer: [new UglifyJSPlugin()]
+  },
 };
