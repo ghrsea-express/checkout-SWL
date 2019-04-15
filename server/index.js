@@ -1,11 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const db = require('../db/Google_express_FEC')
+const db = require('../db/Google_express_FEC');
+const compression = require('compression');
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use(compression());
 app.use(express.static(__dirname + '/../client/dist'));
 
 app.get('/product_items', (req, res) => {
