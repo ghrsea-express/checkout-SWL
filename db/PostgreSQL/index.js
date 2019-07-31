@@ -48,19 +48,24 @@ const executeQuery = (targetTable) => {
 
   execute(targetTable, (err) => {
     if (err) return console.log(`Error in Truncate Table: ${err}`)
-    var stream = client.query(copyFrom(`COPY ${targetTable} FROM STDIN DELIMITER '|' CSV`));
+
+    var stream = client.query(copyFrom(`COPY ${targetTable} FROM STDIN DELIMITER '|' CSV`))
+    
     var fileStream = fs.createReadStream(inputFile)
 
     fileStream.on('error', (err) => {
       console.log(`Error in creating read stream ${err}`)
     })
+
     stream.on('error', (err) => {
       console.log(`Error in creating stream ${err}`)
     })
+
     stream.on('end', () => {
       console.log(`Completed loading data into ${targetTable}`)
       client.end()
     })
+
     fileStream.pipe(stream)
   })
 }
