@@ -15,7 +15,9 @@ let seedEntry = (start, max, current) => {
     current = 1
     return
   } else {
+
     let string = ""
+    
     for(let i = 0; i <= 500000; i++) {
       let generatedData = Generator()
       let entry = `${count}|${generatedData.itemID}|${generatedData.name}|${generatedData.price}|${generatedData.store}|${generatedData.returnDays}`
