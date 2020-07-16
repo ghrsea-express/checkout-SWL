@@ -56,7 +56,6 @@ class Checkout extends Component {
 
   render() {
       return (
-      
         <div>
           <div className='itemPrice'>
             {'$' + parseFloat(this.state.item.price).toFixed(2)}

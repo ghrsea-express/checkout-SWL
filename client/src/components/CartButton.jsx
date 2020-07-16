@@ -32,7 +32,7 @@ class CartButton extends Component {
             <span>Add to cart</span>
           </Button>
         </div>
-      );    
+      )
     } else {
       return (
         <div>
@@ -45,7 +45,6 @@ class CartButton extends Component {
       );    
     }
   }
-
 }
 
 CartButton.propTypes = {
